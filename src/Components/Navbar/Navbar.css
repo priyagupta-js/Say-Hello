@@ -1,7 +1,43 @@
+.nav-container
+{
+
+}
 .nav-content
 {
     display: flex;
     width: 100%;
     height: 50px;
     background-color: #fff;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-left 
+{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-bar
+{
+    padding: 4px;
+    border: 2px solid rgb(134, 133, 133);
+    border-radius: 12px;
+}
+
+.nav-right
+{
+    display: flex;
+    gap: 20px;
+    color: rgb(142, 142, 142);
+}
+.nav-left a
+{
+    text-decoration: none;
+}
+.nav-right a
+{
+    text-decoration: none;
+    color: rgb(88, 88, 88);
 }
