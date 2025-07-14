@@ -1,0 +1,37 @@
+
+
+.create-container
+{
+     display: flex;
+    justify-content: center;
+} 
+
+.create-content
+{
+   
+    max-width:450px;
+    width: 100%;
+    background-color: #fff;
+    margin-top:15px ;
+    border: none;
+    border-radius: 10px;
+    /* background-color: rgb(44, 169, 169); */
+
+}
+
+.first-row
+{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+    gap:10px;
+    align-items: center;
+}
+
+.post-space{
+    padding: 7px 10px;
+    border: 1px solid rgb(199, 197, 197);
+    border-radius: 10px;
+    width:250px;
+}

@@ -1,6 +1,8 @@
 const PostCard =()=>{
     return(
-        <div>PostCard</div>
+        <div>
+            Poscard
+        </div>
     );
 }
 
