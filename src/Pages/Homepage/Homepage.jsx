@@ -1,5 +1,5 @@
 import './Homepage.css';
-import PostCard from "../../Components/PostCard";
+import PostCard from "../../Components/PostCard/PostCard";
 
 const Homepage = () =>{
 

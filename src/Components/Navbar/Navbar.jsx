@@ -6,8 +6,8 @@ const Navbar = () =>{
         <div className="nav-container">
             <div className="nav-content">
                 <div className="nav-left">
-                    <div className="logo">
-                        <Link to="/">Say-Hello</Link>
+                    <div className="logo-container">
+                        <Link to="/" className="logo">Say-Hello</Link>
                     </div>
                     <div className="search-bar-container">
                     <input type="search" className="search-bar" placeholder="search..."/>
