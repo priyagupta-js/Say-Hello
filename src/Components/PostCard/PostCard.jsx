@@ -1,6 +1,10 @@
 import react from 'react';
 import userProfile from "../../assets/user-pic.jpg";
-import certificate from "../../assets/certificate.png"
+import certificate from "../../assets/certificate.png";
+import { IoSendOutline } from "react-icons/io5";
+import { RiPriceTagLine } from "react-icons/ri";
+import { SlLike } from "react-icons/sl";
+import { FaRegCommentDots } from "react-icons/fa";
 import "./PostCard.css";
 
 const PostCard =()=>{
@@ -25,7 +29,7 @@ const PostCard =()=>{
                 </div>
                 <div className='react-stats'>
                     <div className='likes'>
-                        likes
+                        John Willams and 6 others
                     </div>
                     <div className='comments'>
                         6 comments
@@ -33,10 +37,10 @@ const PostCard =()=>{
                 </div>
                 <hr className='horz-line'/>
                 <div className='reactions-button'>
-                    <button type='button'>Like</button>
-                    <button type='button'>Comment</button>
-                    <button type='button'>Send</button>
-                    <button type='button'>Save</button>
+                    <button className='btn'><SlLike/><span> Like</span></button>
+                    <button className='btn'><FaRegCommentDots/><span>Comment</span></button>
+                    <button className='btn'><IoSendOutline/><span>Send</span></button>
+                    <button className='btn'><RiPriceTagLine/><span>Save</span></button>
                 </div>
             </div>
         </div>

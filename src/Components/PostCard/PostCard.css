@@ -54,5 +54,24 @@ color: #a5998d;
 {
     display: flex;
     padding-top: 4px ;
-    gap: 10px;
+    /* gap: 10px; */
+    justify-content: space-between;
+}
+
+.btn
+{
+    flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0px;
+gap: 5px;
+background-color: transparent;
+border: none;
+font-size: 14px;
+transition: background-color 0.2s ease;
+}
+
+.reactions-button .btn:hover{
+background-color: #f0f0f0;
 }

@@ -22,6 +22,7 @@ position: sticky;
 .logo
 {
     color: rgb(121, 120, 120);
+    font-size: 1.5rem;
 }
 
 .search-bar
