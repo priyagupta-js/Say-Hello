@@ -1,6 +1,58 @@
-
-
+/* 
+.card-content
+{
+    background-color: #fff;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
 .user-details
 {
     display: flex;
+    gap: 10px;
 }
+
+.user-pic
+{
+    border-radius: 50%;
+}
+
+.username
+{
+    letter-spacing: 1px;
+    font-size: 15px ;
+    font-weight: 600;
+}
+
+.user-bio, .user-timeline
+{
+font-size:10px ;
+letter-spacing: 1px;
+color: #a5998d;
+}
+
+.text-content
+{
+    padding: 6px 0px ;
+}
+
+.react-stats
+{
+    display: flex;
+    justify-content: space-between;
+    padding:4px 0px ;
+}
+
+.horz-line
+{
+    height: 1px;
+    background-color: #a5a4a2;
+    border: none;
+    margin-bottom:2px;
+}
+.reactions-button
+{
+    display: flex;
+    padding-top: 4px ;
+    gap: 10px;
+} */

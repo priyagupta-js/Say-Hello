@@ -5,8 +5,6 @@
   box-sizing: border-box;
 }
 
-.main-container
-{
+body{
   background-color: rgb(248, 232, 232);
 }
-
