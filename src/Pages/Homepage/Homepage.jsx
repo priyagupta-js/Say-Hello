@@ -20,6 +20,7 @@ const Homepage = () =>{
     </div>
     {users.map((post) =>(
         <PostCard key={post.id} post={post}/>
+        
     ))}
     
 </div>

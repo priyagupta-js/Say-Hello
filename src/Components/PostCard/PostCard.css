@@ -75,3 +75,20 @@ transition: background-color 0.2s ease;
 .reactions-button .btn:hover{
 background-color: #f0f0f0;
 }
+
+.popup
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position:fixed;
+    bottom: 30px;
+    left: 30px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    z-index: 999;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
