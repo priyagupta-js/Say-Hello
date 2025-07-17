@@ -1,4 +1,5 @@
 import './Homepage.css';
+import {users} from "../../data/data";
 import PostCard from "../../Components/PostCard/PostCard";
 import userPic from "../../assets/user-pic.jpg";
 const Homepage = () =>{
@@ -17,7 +18,10 @@ const Homepage = () =>{
         </div>
     </div>
     </div>
-    <PostCard />
+    {users.map((post) =>(
+        <PostCard key={post.id} post={post}/>
+    ))}
+    
 </div>
 
 
