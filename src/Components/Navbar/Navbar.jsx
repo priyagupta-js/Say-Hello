@@ -19,6 +19,7 @@ const Navbar = () =>{
                     <Link to ="/message">Messages</Link>
                     <Link to ="/notification">Notifications</Link>
                     <Link to="/profile">Profile</Link>
+                    <Link to="/saved">Saved Posts</Link>
                 </div>
             </div>
         </div>

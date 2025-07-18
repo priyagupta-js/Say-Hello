@@ -1,6 +1,9 @@
 const Profile = () => {
     return(
-<div>Profile</div>
+<div>
+<p>Profile</p>
+<p>Coming soon!!!</p>
+</div>
     );
 }
 

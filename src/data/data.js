@@ -12,7 +12,7 @@ export const users =[
         comments:6,
         reposts: 6,
         time:"1w",
-    }
+    },
     //  {
     //     id:2,
     //     name:"Sakshi Parihar",

@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, {  useState } from "react";
 import "./PostCard.css";
 // import ReactBtns from "../Button/ReactBtns";
 import { IoSendOutline } from "react-icons/io5";
@@ -6,20 +6,31 @@ import { RiPriceTagLine } from "react-icons/ri";
 import { SlLike } from "react-icons/sl";
 import { FaRegCommentDots } from "react-icons/fa";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const PostCard = ({ post }) => {
 
-    const [showPopup , setShowPopup] = useState(false);
+    // const [showPopup , setShowPopup] = useState(false);
+    const [isSave, setIsSave] = useState(false);
+    // const [showMessage , setShowMessage] = useState('');
 
     const HandleSave = () =>
     {
-
-        setShowPopup(true);
-        // hides the popup - after 4sec
-        setTimeout(() =>{
-            setShowPopup(false);
-        },4000);
+        // setShowPopup(true);
+        if(isSave)
+        {
+          toast.info('Post unsaved.');
+        }
+        else{
+          toast.success('Post saved.');
+        }
+        setIsSave(!isSave);
+        // // hides the popup - after 4sec
+        // setTimeout(() =>{
+        //     setShowPopup(false);
+        // },4000);
     };
 
   return (
@@ -30,7 +41,7 @@ const PostCard = ({ post }) => {
             <img
               src={post.logoImg}
               className="user-pic"
-              alt=""
+              alt="user-picture"
               height="40px"
               width="40px"
             />
@@ -69,13 +80,16 @@ const PostCard = ({ post }) => {
           </button>
           <button className="btn" onClick={HandleSave}>
             <RiPriceTagLine />
-            <span>Save</span>
+            <span>{isSave? "Unsave": "Save"}</span>
           </button>
-          {showPopup && (
-            <div className="popup"><IoCheckmarkCircleSharp/><span> Post saved Successfully</span></div>
-          )}
+          {/* {showPopup && (
+            <div className="popup"><IoCheckmarkCircleSharp/>{showMessage}</div>
+          )} */}
+          
+
         </div>
       </div>
+      <ToastContainer position="bottom-left" autoClose={2000} />
     </div>
   );
 };
