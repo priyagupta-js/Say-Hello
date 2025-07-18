@@ -1,0 +1,43 @@
+ 
+.save-post-container
+{
+max-width: 700px;
+min-width:500px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius:12px ;
+
+margin:15px auto;
+} 
+.header-row
+{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+padding: 10px;
+
+/* gap: 20px; */
+}
+.heading
+{
+    font-size: 30px;
+    font-weight:500;
+    margin: 0;
+    
+}
+
+.post-search-btn
+{
+    padding: 8px 10px;
+    border-radius: 15px;
+    border: 1px solid rgb(194, 192, 192);
+}
+.divider
+{
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+    margin-top:10px ;
+}

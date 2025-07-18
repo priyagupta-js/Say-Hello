@@ -16,8 +16,9 @@ function App() {
   <Layout>
         <Routes>
           <Route path='/' element={<Homepage/>} />
-          <Route path='/savedPosts' element={<SavePost/>} />
+          <Route path='/saved' element={<SavePost/>} />
           <Route path='/profile' element= {<Profile />} />
+
         </Routes>
         </Layout>
     </Router>
