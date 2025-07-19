@@ -2,7 +2,7 @@ import './Homepage.css';
 import {users} from "../../data/data";
 import PostCard from "../../Components/PostCard/PostCard";
 import userPic from "../../assets/user-pic.jpg";
-const Homepage = () =>{
+const Homepage = ({handleSavePosts}) =>{
 
     return (
 <div>
@@ -19,7 +19,7 @@ const Homepage = () =>{
     </div>
     </div>
     {users.map((post) =>(
-        <PostCard key={post.id} post={post}/>
+        <PostCard key={post.id} post={post} handleSavePosts={handleSavePosts}/>
         
     ))}
     

@@ -10,27 +10,21 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post ,handleSavePosts}) => {
 
-    // const [showPopup , setShowPopup] = useState(false);
     const [isSave, setIsSave] = useState(false);
-    // const [showMessage , setShowMessage] = useState('');
 
     const HandleSave = () =>
     {
-        // setShowPopup(true);
         if(isSave)
         {
           toast.info('Post unsaved.');
         }
         else{
+          handleSavePosts(post);
           toast.success('Post saved.');
         }
         setIsSave(!isSave);
-        // // hides the popup - after 4sec
-        // setTimeout(() =>{
-        //     setShowPopup(false);
-        // },4000);
     };
 
   return (
