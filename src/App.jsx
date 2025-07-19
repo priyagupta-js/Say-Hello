@@ -1,41 +1,49 @@
-import React, { useState } from 'react';
-import './index.css';
-import {BrowserRouter as Router , Routes, Route} from 'react-router-dom';
-import Layout from './Layout/Layout';
-import Homepage from './Pages/Homepage/Homepage';
-import SavePost from './Pages/SavePost/SavePost';
-import Profile from './Pages/Profile/Profile';
-import Navbar from './Components/Navbar/Navbar';
+import React, { useState } from "react";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import Homepage from "./Pages/Homepage/Homepage";
+import SavePost from "./Pages/SavePost/SavePost";
+import Profile from "./Pages/Profile/Profile";
+import Navbar from "./Components/Navbar/Navbar";
+import { PostProvider } from "./PostContext";
 
 function App() {
 
-  // global state 
-  const[savedPosts, setSavedPosts] = useState([]);
+  // const handleSavePosts = (post) => {
+  //   const isAlreadySaved = savedPosts.some((p) => p.id === post.id);
 
-  const handleSavePosts= (post)=> {
+  //   if (!isAlreadySaved) {
+  //     setSavedPosts((savedPosts) => [...savedPosts, post]);
+  //   }
+  // };
 
-    const isAlreadySaved = savedPosts.some((p) => p.id == post.id);
-
-    if(!isAlreadySaved){
-      setSavedPosts((savedPosts)=>[...savedPosts , post]);
-    }
-
-  };
+  // const handleUnsavePosts = (post) => {
+  //   const updatedPosts = savedPosts.filter((p) => p.id !== post.id);
+  //   setSavedPosts(updatedPosts);
+  // };
   return (
     <>
-<Router>
-  <Navbar/>
-  <Layout>
-        <Routes>
-          <Route path='/' element={<Homepage handleSavePosts={handleSavePosts}/>} />
-          <Route path='/saved' element={<SavePost savedPosts={savedPosts} />} />
-          <Route path='/profile' element= {<Profile />} />
-
-        </Routes>
+    <PostProvider>
+      <Router>
+        <Navbar />
+        <Layout>
+          <Routes>
+            <Route
+              path="/"
+              element={<Homepage />}
+            />
+            <Route
+              path="/saved"
+              element={<SavePost/>}
+            />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
         </Layout>
-    </Router>
+      </Router>
+      </PostProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

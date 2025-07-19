@@ -1,8 +1,11 @@
 import PostCard from "../../Components/PostCard/PostCard";
 import "../../Components/PostCard/PostCard.css";
+import { PostContext } from "../../PostContext";
 import "./savedPost.css";
+import { useContext } from "react";
 
-const SavePost = ({ savedPosts }) => {
+const SavePost = () => {
+  const {savedPosts,handleSavePosts,handleUnsavePosts} = useContext(PostContext);
   return (
     <div className="save-post-container">
       <div className="save-post-wrapper">
@@ -12,17 +15,20 @@ const SavePost = ({ savedPosts }) => {
         </div>
         <hr className="divider" />
 
-        
         {savedPosts.length === 0 ? (
           <p className="no-posts">no posts to show</p>
         ) : (
           savedPosts.map((post) => (
-            <PostCard key={post.id} post={post} handleSavePosts={() => {}} />
+            <PostCard 
+            key={post.id} 
+            post={post} 
+            handleUnsavePosts={handleUnsavePosts}
+            isSavedPage={true}
+             />
           ))
         )}
-         <hr className="divider" />
+        <hr className="divider" />
       </div>
-    
     </div>
   );
 };

@@ -1,30 +1,35 @@
-import React, {  useState } from "react";
+import React, {  useState ,useContext} from "react";
 import "./PostCard.css";
-// import ReactBtns from "../Button/ReactBtns";
 import { IoSendOutline } from "react-icons/io5";
 import { RiPriceTagLine } from "react-icons/ri";
 import { SlLike } from "react-icons/sl";
 import { FaRegCommentDots } from "react-icons/fa";
-import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { PostContext } from "../../PostContext";
 
+const PostCard = 
+({ post, isSavedPage}) => {
 
-const PostCard = ({ post ,handleSavePosts}) => {
+    const {
+      handleSavePosts , handleUnsavePosts,savedPosts} = useContext(PostContext);
 
-    const [isSave, setIsSave] = useState(false);
+      const isAlreadySaved = savedPosts.some((p) => p.id === post.id);
+      const [isSave, setIsSave] = useState(isAlreadySaved);
 
     const HandleSave = () =>
     {
-        if(isSave)
+        if(isSavedPage || isSave )
         {
+          handleUnsavePosts(post);
           toast.info('Post unsaved.');
+          setIsSave(false);
         }
         else{
           handleSavePosts(post);
-          toast.success('Post saved.');
+          toast.success('Post saved.')
+          setIsSave(true);
         }
-        setIsSave(!isSave);
     };
 
   return (
@@ -74,7 +79,7 @@ const PostCard = ({ post ,handleSavePosts}) => {
           </button>
           <button className="btn" onClick={HandleSave}>
             <RiPriceTagLine />
-            <span>{isSave? "Unsave": "Save"}</span>
+            <span>{ isSave || isSavedPage? "Unsave": "Save"}</span>
           </button>
           {/* {showPopup && (
             <div className="popup"><IoCheckmarkCircleSharp/>{showMessage}</div>
