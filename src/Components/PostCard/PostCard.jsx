@@ -38,7 +38,7 @@ const PostCard =
         <div className="user-details">
           <div className="user-pic-container">
             <img
-              src={post.logoImg}
+              src={post.userLogo}
               className="user-pic"
               alt="user-picture"
               height="40px"
@@ -55,7 +55,10 @@ const PostCard =
           <div className="">{post.text}</div>
         </div>
         <div className="image-content">
-          <img src={post.image} alt="" width="350px" height="auto" />
+          <img src={post.image} alt="users" 
+          width="350px" 
+          // height="auto" 
+          />
         </div>
         <div className="react-stats">
           <div className="likes">John Willams and 6 others</div>
