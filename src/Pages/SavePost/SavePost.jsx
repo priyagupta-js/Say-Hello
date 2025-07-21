@@ -12,6 +12,21 @@ const SavePost = () => {
   const handleInputChange = (e) =>{
     setSearchQuery(e.target.value.toLowerCase());
   } 
+  
+  const filterPosts = savedPosts.filter((post) =>{
+    const lowerQuery = searchQuery.trim().toLowerCase();
+    const postText = post.text?.toLowerCase() || "";
+
+    const Hashtags = post.text?.match(/#[\w]+/g) || [];
+
+    const lowerHashtags = Hashtags.map((tag) => tag.toLowerCase());
+
+    const matchtext = postText.includes(lowerQuery);
+    const matchHashtags = lowerHashtags.some((tags)=> tags.includes(lowerHashtags));
+
+    return matchtext || matchHashtags;
+  
+  });
   return (
     <div className="save-post-container">
       <div className="save-post-wrapper">
@@ -21,10 +36,10 @@ const SavePost = () => {
         </div>
         <hr className="divider" />
 
-        {savedPosts.length === 0 ? (
-          <p className="no-posts">no posts to show</p>
+        {filterPosts.length === 0 ? (
+          <p className="no-posts">no matching posts found</p>
         ) : (
-          savedPosts.map((post) => (
+          filterPosts.map((post) => (
             <PostCard 
             key={post.id} 
             post={post} 
