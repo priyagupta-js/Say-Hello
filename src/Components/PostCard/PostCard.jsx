@@ -61,7 +61,7 @@ const PostCard =
           />
         </div>
         <div className="react-stats">
-          <div className="likes">John Willams and 6 others</div>
+          <div className="likes">❤️6</div>
           <div className="comments">{`${post.comments} comments`}</div>
         </div>
         <hr className="horz-line" />
