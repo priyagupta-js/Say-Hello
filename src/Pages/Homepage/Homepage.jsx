@@ -13,7 +13,7 @@ const Homepage = () =>{
                 <img src={userPic} className="user" alt='user' height="50px" width="50px"/>
             </div>
             <div className="post-bar-container">
-                <input type="text" className="post-space"placeholder="write a post"/>
+                <input type="text" className="post-space" placeholder="write a post"/>
             </div>
         </div>
     </div>

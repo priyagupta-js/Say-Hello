@@ -15,8 +15,8 @@ const Navbar = () =>{
                 </div>
                 <div className="nav-right">
                     <Link to="/">Home</Link>
-                    <Link to="/request">Requests</Link>
-                    <Link to ="/message">Messages</Link>
+                    <Link to="/requests">Requests</Link>
+                    <Link to ="/messages">Messages</Link>
                     <Link to ="/notification">Notifications</Link>
                     <Link to="/profile">Profile</Link>
                     <Link to="/saved">Saved Posts</Link>

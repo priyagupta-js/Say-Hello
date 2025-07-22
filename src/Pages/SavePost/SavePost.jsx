@@ -5,7 +5,7 @@ import "./savedPost.css";
 import { useContext, useState } from "react";
 
 const SavePost = () => {
-  const {savedPosts,handleSavePosts,handleUnsavePosts} = useContext(PostContext);
+  const {savedPosts,handleUnsavePosts} = useContext(PostContext);
 
   const [searchQuery, setSearchQuery] = useState("");
 

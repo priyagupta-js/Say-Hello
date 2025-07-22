@@ -1,14 +1,20 @@
 
-/* .card-container
+.card-container
 {
-    margin-bottom: 5px;
-} */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
 .card-content
 {
     background-color: #fff;
     padding: 6px 10px;
-    margin: 5px;
+    margin: 5px auto;
     border-radius: 10px;
+    max-width: 500px;
+    transition: all 0.3s ease;
+    word-wrap: break-word;
 }
 .user-details
 {
@@ -37,8 +43,27 @@ color: #a5998d;
 
 .text-content
 {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
     padding: 6px 0px ;
 }
+.image-content
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.post-image
+{
+width: 100%;
+max-width: 100%;
+height: auto;
+border-radius: 8px;
+object-fit: cover;
+}
+
 
 .react-stats
 {
@@ -80,6 +105,15 @@ transition: background-color 0.2s ease;
 background-color: #f0f0f0;
 }
 
+.toggle-btn{
+background-color: transparent;
+border: none;
+color:rgb(158, 156, 156);
+font-weight: 500;
+cursor: pointer;
+padding-left:4px;
+}
+/* 
 .popup
 {
     display:flex;
@@ -95,4 +129,4 @@ background-color: #f0f0f0;
     z-index: 999;
     font-size: 1.1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+} */
