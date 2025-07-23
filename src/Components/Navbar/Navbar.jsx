@@ -1,9 +1,10 @@
+import React from 'react';
 import './Navbar.css';
 import { Link } from "react-router-dom";
 
 const Navbar = () =>{
     return(
-        <div className="nav-container">
+        <div className="sticky top-0 shadow-md">
             <div className="nav-content">
                 <div className="nav-left">
                     <div className="logo-container">

@@ -1,3 +1,4 @@
+import React from 'react';
 import './Homepage.css';
 import {users} from "../../data/data";
 import PostCard from "../../Components/PostCard/PostCard";
