@@ -14,7 +14,7 @@ const Navbar = () =>{
                     <input type="search" className="search-bar" placeholder="search..."/>
                     </div>
                 </div>
-                <div className="nav-right">
+                <div className="hidden md:flex gap-4 text-[#8e8e8e]">
                     <Link to="/">Home</Link>
                     <Link to="/requests">Requests</Link>
                     <Link to ="/messages">Messages</Link>
