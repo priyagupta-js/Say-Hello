@@ -12,7 +12,7 @@ const Navbar = () =>{
             <div className="nav-content sticky top-0 shadow-md">
                 <div className="nav-left">
                     <div className="logo-container">
-                        <Link to="/" className="text-base md:text-2xl">Say-Hello</Link>
+                        <Link to="/home" className="text-base md:text-2xl">Say-Hello</Link>
                     </div>
                     <div className="search-bar-container">
                     <input type="search" className="search-bar" placeholder="search..."/>

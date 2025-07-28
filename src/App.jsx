@@ -8,6 +8,7 @@ import SavePost from "./Pages/SavePost/SavePost";
 import Profile from "./Pages/Profile/Profile";
 import Navbar from "./Components/Navbar/Navbar";
 import { PostProvider } from "./PostContext";
+import Login from "./Pages/Login/Login";
 
 function App() {
   // const handleSavePosts = (post) => {
@@ -29,7 +30,8 @@ function App() {
           <Navbar />
           <Layout>
             <Routes>
-              <Route path="/" element={<Homepage />} />
+             <Route path="/" element={<Login/>}/>
+              <Route path="/home" element={<Homepage />} />
               <Route path="/requests" element={<Request />} />
               {/* <Route path="/messages" element={<Messages />}/> */}
               {/* <Route path="/notifications" element={<Notification />}/> */}
