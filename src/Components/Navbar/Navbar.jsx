@@ -19,7 +19,7 @@ const Navbar = () =>{
                     </div>
                 </div>
                 <div className="hidden md:flex gap-4 text-[#8e8e8e]">
-                    <Link to="/">Home</Link>
+                    <Link to="/home">Home</Link>
                     <Link to="/requests">Requests</Link>
                     <Link to ="/messages">Messages</Link>
                     <Link to ="/notification">Notifications</Link>
