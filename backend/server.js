@@ -1,11 +1,11 @@
-const express = require('express')
+
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import db from './db.js';
+
+
 const app = express()
-
-const connectDB = require ('./sayhello');
-const dotenv = require('dotenv');
-const users = require('./src/Routes/routes')
-
-
 dotenv.config()
 
 const PORT = process.env.PORT;
@@ -14,8 +14,9 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     console.log("Setup is running");
     res.send("Setup successful");
-})
+});
 
-app.listen(PORT , () =>{
+app.listen(PORT , () =>
+    {
     console.log(`App is listenting at port ${PORT}`);
 })
