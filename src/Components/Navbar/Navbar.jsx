@@ -22,7 +22,7 @@ const Navbar = () =>{
                     <Link to="/home">Home</Link>
                     <Link to="/requests">Requests</Link>
                     <Link to ="/messages">Messages</Link>
-                    <Link to ="/notification">Notifications</Link>
+                    <Link to ="/notify">Notifications</Link>
                     <Link to="/profile">Profile</Link>
                     <Link to="/saved">Saved Posts</Link>
                 </div>

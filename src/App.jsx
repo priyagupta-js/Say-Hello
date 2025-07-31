@@ -3,6 +3,8 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Homepage from "./Pages/Homepage/Homepage";
+import Messages from "./Pages/messages/Message";
+import Notification from "./Pages/Notification/Notification";
 import Request from "./Pages/Request/Requests";
 import SavePost from "./Pages/SavePost/SavePost";
 import Profile from "./Pages/Profile/Profile";
@@ -30,11 +32,11 @@ function App() {
           <Navbar />
           <Layout>
             <Routes>
-              <Route path="/" element={<Login/>}/>
+              {/* <Route path="/" element={<Login/>}/> */}
               <Route path="/home" element={<Homepage />} />
               <Route path="/requests" element={<Request />} />
-              {/* <Route path="/messages" element={<Messages />}/> */}
-              {/* <Route path="/notifications" element={<Notification />}/> */}
+              <Route path="/messages" element={<Messages />}/>
+              <Route path="/notify" element={<Notification />}/>
               <Route path="/saved" element={<SavePost />} />
               <Route path="/profile" element={<Profile />} />
             </Routes>
