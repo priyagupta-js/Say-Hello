@@ -32,7 +32,7 @@ const CreatePost = ({ onExpand, isPopup, onClose }) => {
         </div>
       )}
 
-      {/* --- Text Input (Popup = textarea, Normal = input) --- */}
+    {/* Text input */}
       {isPopup ? (
         <textarea
           rows={4}
@@ -55,7 +55,7 @@ const CreatePost = ({ onExpand, isPopup, onClose }) => {
         </div>
       )}
 
-      {/* --- Media Buttons (shared between both modes) --- */}
+      {/* --- Media Buttons) --- */}
       <div
         className={`flex gap-4 text-gray-600 mt-4 ${
           isPopup ? "text-lg" : "justify-between text-sm my-2"

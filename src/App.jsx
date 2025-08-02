@@ -11,6 +11,7 @@ import Profile from "./Pages/Profile/Profile";
 import Navbar from "./Components/Navbar/Navbar";
 import { PostProvider } from "./PostContext";
 import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/signup/signup";
 
 function App() {
   // const handleSavePosts = (post) => {
@@ -32,7 +33,8 @@ function App() {
           <Navbar />
           <Layout>
             <Routes>
-              {/* <Route path="/" element={<Login/>}/> */}
+              <Route path="/" element={<Login/>}/>
+              <Route path="/signup" element={<SignUp/>}/>
               <Route path="/home" element={<Homepage />} />
               <Route path="/requests" element={<Request />} />
               <Route path="/messages" element={<Messages />}/>
