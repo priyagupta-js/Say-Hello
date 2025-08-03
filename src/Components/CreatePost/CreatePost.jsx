@@ -57,7 +57,6 @@ const CreatePost = ({ onExpand, isPopup, onClose }) => {
           />
         </div>
       )}
-
       {/* --- Media Buttons) --- */}
       <div
         className={`flex gap-4 text-gray-600 mt-4 ${
