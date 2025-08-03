@@ -9,7 +9,7 @@ const Navbar = () =>{
     const[IsOpen , setIsOpen] = useState(false);
     return(
         // <div className="sticky top-0 shadow-md">
-            <div className="nav-content sticky top-0 shadow-md">
+            <div className="nav-content sticky top-0 shadow-md z-50">
                 <div className="nav-left">
                     <div className="logo-container">
                         <Link to="/home" className="text-base md:text-2xl">Say-Hello</Link>

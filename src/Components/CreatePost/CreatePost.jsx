@@ -4,8 +4,11 @@ import { FaVideo } from "react-icons/fa6";
 import { MdInsertPhoto } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 
 const CreatePost = ({ onExpand, isPopup, onClose }) => {
+
+  const [postText, setPostText] = useState("");
   return (
     <div
       className={`bg-white rounded-2xl shadow-2xl w-full relative ${
@@ -79,8 +82,14 @@ const CreatePost = ({ onExpand, isPopup, onClose }) => {
       {isPopup && (
         <div className="flex justify-end mt-6">
           <button
-            className="bg-gray-300 text-gray-600 px-4 py-2 rounded-full cursor-not-allowed"
-            disabled
+          disabled = {postText.trim() === ""}
+          className={`px-4 py-2 rounded-md text-white ${
+    postText.trim() === ""
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-blue-600 hover:bg-blue-700"
+  }`}
+            onClick={ () => {setPostText("");
+            }}
           >
             Post
           </button>
