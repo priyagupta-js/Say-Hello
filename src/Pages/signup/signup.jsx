@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
   return (
     <>
       <div className="h-screen flex items-center justify-center ">
@@ -22,7 +24,7 @@ const SignUp = () => {
               Signup
             </button>
           </form>
-          <p className="text-center cursor-pointer">Already a member? <Link to="/" className="underline">Login here</Link></p>
+          <p className="text-center cursor-pointer">Already a member? <span className="underline" onClick={() =>navigate("/")}> Login here</span></p>
         </div>
       </div>
     </>

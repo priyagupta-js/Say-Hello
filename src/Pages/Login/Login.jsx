@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Login = () => {
+
+  const navigate = useNavigate();
   return (
     <>
       <div className="h-screen flex items-center justify-center overflow-hidden">
@@ -19,11 +22,11 @@ const Login = () => {
               placeholder="Password"
             />
             <p className="my-1 cursor-pointer hover:underline">Forgot Password?</p>
-            <button className="rounded-md bg-[#145fff] py-1 text-white m-2"><Link to="/home">Login</Link>
+            <button className="rounded-md bg-[#145fff] py-1 text-white m-2" onClick={() => navigate("/home")}>Login
               
             </button>
           </form>
-          <p className="text-center cursor-pointer">Don't have a account? <Link to="/signup" className="underline">Register here</Link></p>
+          <p className="text-center cursor-pointer">Don't have a account? <span onClick={() => navigate("/signup")} className="underline">Register here</span></p>
         </div> 
       </div>
     </>

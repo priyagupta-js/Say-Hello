@@ -19,23 +19,24 @@ const Navbar = () =>{
                     </div>
                 </div>
                 <div className="hidden md:flex gap-4 text-[#8e8e8e]">
-                    <Link to="/home">Home</Link>
-                    <Link to="/requests">Requests</Link>
-                    <Link to ="/messages">Messages</Link>
-                    <Link to ="/notify">Notifications</Link>
-                    <Link to="/profile">Profile</Link>
-                    <Link to="/saved">Saved Posts</Link>
+                    <Link to="/home" className="hover:text-blue-500 font-bold">Home</Link>
+                    <Link to="/requests" className="hover:text-blue-500 font-bold">Requests</Link>
+                    <Link to ="/messages" className="hover:text-blue-500 font-bold">Messages</Link>
+                    <Link to ="/notify" className="hover:text-blue-500 font-bold" >Notifications</Link>
+                    <Link to="/profile" className="hover:text-blue-500 font-bold">Profile</Link>
+                    <Link to="/saved" className="hover:text-blue-500 font-bold">Saved Posts</Link>
                 </div>
+                {/* for smaller screen size (Phone) */}
                 <div className='md:hidden'>
                     <button onClick={ () =>setIsOpen(!IsOpen)}>{IsOpen? <RxHamburgerMenu size={28}/>:<HiMenu size={28}/>}</button>
                 </div>
 
                 {IsOpen && (
                     <div className="md:hidden mt-4 space-y-2 text-center text-[#8e8e8e]">
-                    <Link to="/" className="block ">Home</Link>
+                    <Link to="/home" className="block ">Home</Link>
                     <Link to="/requests" className="block ">Requests</Link>
                     <Link to ="/messages" className="block ">Messages</Link>
-                    <Link to ="/notification" className="block ">Notifications</Link>
+                    <Link to ="/notify" className="block ">Notifications</Link>
                     <Link to="/profile" className="block ">Profile</Link>
                     <Link to="/saved" className="block ">Saved Posts</Link>
                 </div>
