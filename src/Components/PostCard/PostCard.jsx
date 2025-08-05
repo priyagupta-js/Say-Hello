@@ -24,7 +24,8 @@ const PostCard = ({ post, isSavedPage }) => {
   // extract hashtags (using regEx)
 
   // const hashtags = fulltext.match(/#[\w]+/g) || [];
-  const displayContent = expanded ? post.text : post.text.slice(0, charLimit);
+const postText = post.text || post.desc || ""; // fallback support
+const displayContent = expanded ? postText : postText.slice(0, charLimit);
 
   // saved Post
   const HandleSave = () => {
@@ -60,7 +61,7 @@ const PostCard = ({ post, isSavedPage }) => {
         </div>
         <div className="text-content">
           {displayContent}
-          {post.text.length > charLimit && (
+          {postText.length > charLimit && (
             <button onClick={toggleContent} className="toggle-btn">
               {expanded ? "show less" : "...show more"}
             </button>

@@ -47,7 +47,7 @@ const Homepage = () => {
         {/* dynamic user posts first */}
 
         {userPost.map((post) =>(
-<PostCard key={PostCard.id} post={post} isSavedPage={false}/>
+<PostCard key={post.id} post={post} isSavedPage={false}/>
         ))}
         {/* staticPosts */}
          {/* users-posts */}
