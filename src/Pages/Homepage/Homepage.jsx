@@ -11,12 +11,13 @@ const Homepage = () => {
    const [onExpand, setOnExpand] = useState(false);
    const [userPost , setUserPost] = useState([]);
 
-   const handleNewPost =(text) =>{
+   const handleNewPost =(data) =>{
     const newPost = {
       id:Date.now(),
       name:"Priya Gupta",
-      desc:text,
-      profile:{userPic},
+      desc:data.text,
+      profile:users.UserLogo || null,
+      image: data.image || null,
       time:"Just now",
     };
 
@@ -30,9 +31,6 @@ const Homepage = () => {
      (
    <CreatePost onExpand={() => setOnExpand(true)}/>
      )}
-   
-
-     
 {/* popped -model */}
         {onExpand && (
           <>

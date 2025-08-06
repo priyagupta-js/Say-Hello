@@ -20,7 +20,6 @@ const PostCard = ({ post, isSavedPage }) => {
   // toggle for more/less
   const toggleContent = () => setExpanded(!expanded);
 
-  // const fulltext = post.text || "";
   // extract hashtags (using regEx)
 
   // const hashtags = fulltext.match(/#[\w]+/g) || [];
