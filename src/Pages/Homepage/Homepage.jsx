@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./Homepage.css";
 import userPic from "../../assets/user-pic.jpg";
 import { users } from "../../data/data";
@@ -10,6 +10,11 @@ const Homepage = () => {
 
    const [onExpand, setOnExpand] = useState(false);
    const [userPost , setUserPost] = useState([]);
+
+    useEffect(() => {
+    const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+    setUserPost(storedPosts);  // Set posts in state
+  }, []);
 
    const handleNewPost =(data) =>{
     const newPost = {
