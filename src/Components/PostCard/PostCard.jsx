@@ -17,6 +17,7 @@ const PostCard = ({ post, isSavedPage }) => {
   const [expanded, setExpanded] = useState(false);
   const charLimit = 50;
 
+  // console.log("Post Image: ", post.image);
   // toggle for more/less
   const toggleContent = () => setExpanded(!expanded);
 
@@ -41,15 +42,15 @@ const displayContent = expanded ? postText : postText.slice(0, charLimit);
 
   return (
     <div className="card-container">
-      <div className="card-content">
+      <div className="card-content bg-white px-4 py-4 rounded-xl ">
         <div className="user-details">
           <div className="user-pic-container">
             <img
               src={post.userLogo}
-              className="user-pic"
+              className="h-12 w-12 rounded-full object-cover"
               alt="user-picture"
-              height="40px"
-              width="40px"
+              // height="40px"
+              // width="40px"
             />
           </div>
           <div className="user-info">
@@ -87,11 +88,22 @@ const displayContent = expanded ? postText : postText.slice(0, charLimit);
           )} */}
         </div>
         <div className="image-content">
+        {post.image && post.image.includes("video") ? (
+          <video
+          src={post.image}
+          controls
+          className="post-image w-full max-h-80 object-contain rounded"
+          />
+        ):
+        (
+          post.image &&
           <img
             src={post.image}
             alt="users"
-            className="post-image"
+            className="post-image w-full max-h-80 object-contain rounded"
           />
+        )}
+          
         </div>
         <div className="react-stats">
           <div className="likes">❤️6</div>

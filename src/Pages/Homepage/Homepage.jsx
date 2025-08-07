@@ -16,12 +16,16 @@ const Homepage = () => {
       id:Date.now(),
       name:"Priya Gupta",
       desc:data.text,
-      profile:users.UserLogo || null,
-      image: data.image || null,
+      userLogo:userPic || null,
+      image: data.media || null,
       time:"Just now",
     };
 
-    setUserPost((prev) => [newPost, ...prev]);
+    const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+
+    const updatedPosts = [newPost, ...storedPosts];
+     localStorage.setItem("posts", JSON.stringify(updatedPosts));
+     setUserPost(updatedPosts); 
    };
   return (
 

@@ -8,10 +8,10 @@
 }
 .card-content
 {
-    background-color: #fff;
-    padding: 6px 10px;
+    /* background-color: #fff;
+    padding: 12px 10px; */
     margin: 5px auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     max-width: 500px;
     transition: all 0.3s ease;
     word-wrap: break-word;
@@ -22,10 +22,6 @@
     gap: 10px;
 }
 
-.user-pic
-{
-    border-radius: 50%;
-}
 
 .username
 {

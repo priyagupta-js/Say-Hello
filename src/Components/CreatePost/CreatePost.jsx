@@ -10,7 +10,8 @@ import { useState } from "react";
 const CreatePost = ({ onExpand, isPopup, onClose ,onSubmit}) => {
 
   const[postText, setPostText] = useState("");
-  const[selected, setSelected] = useState("");
+  const[selected, setSelected] = useState(null);
+  const[mediaType , setMediaType] = useState(null);
 
 
   const handlePost = () =>{
@@ -18,21 +19,25 @@ const CreatePost = ({ onExpand, isPopup, onClose ,onSubmit}) => {
 
     onSubmit({
       text: postText.trim(),
-      image : selected
+      media : selected,
+      mediaType: mediaType,
    });
 
     setPostText("");
     setSelected(null);
+    setMediaType(null);
     if (onClose) onClose();
   };
 
-  const handleImagePost =(e) =>{
+  const handleMediaUpload =(e) =>{
 const file =e.target.files[0];
 if(file)
 {
   // to preview the image
-  const imgUrl = URL.createObjectURL(file);
-  setSelected(imgUrl);
+  const fileUrl = URL.createObjectURL(file);
+  setSelected(fileUrl);
+  const filetype = file.type.split("/")[0];
+  setMediaType(filetype);
 }
   };
 
@@ -83,23 +88,39 @@ if(file)
 
             {selected && (
               <div className="mt-4">
+              {mediaType=== "video" ?(
+                <video 
+                src={selected}
+                controls 
+                className="w-full max-h-80 object-contain rounded"
+              />
+              ):
+              (
                 <img 
                 src={selected}
                 alt="Preview"
                 className="w-full max-h-80 object-contain rounded"
                 />
+              )}
               </div>
             )}
             {/* media buttons */}
+            {/* video upload */}
           <div className="flex gap-2 mt-4">
-            <button className="p-2 rounded hover:bg-gray-100"> 
+            <label className="p-2 rounded hover:bg-gray-100 cursor-pointer flex items-center gap-1"> 
               <FaVideo size={24} />
-            </button>
+              <input type="file"
+              accept="video/*"
+              onChange={handleMediaUpload}
+              className="hidden"
+              />
+            </label>
+            {/* image upload */}
              <label className="p-2 rounded hover:bg-gray-100 cursor-pointer flex items-center gap-1">
               <MdInsertPhoto size={24} />
                <input type="file"
               accept="image"
-              onChange={handleImagePost}
+              onChange={handleMediaUpload}
               className="hidden"/>
               </label>
             <button className="p-2 rounded hover:bg-gray-100">
