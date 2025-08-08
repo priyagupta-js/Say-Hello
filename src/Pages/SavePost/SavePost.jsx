@@ -1,7 +1,7 @@
 import PostCard from "../../Components/PostCard/PostCard";
 import "../../Components/PostCard/PostCard.css";
 import { PostContext } from "../../PostContext";
-import "./savedPost.css";
+import "./SavedPost.css";
 import React ,{ useContext, useState } from "react";
 
 const SavePost = () => {
