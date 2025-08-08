@@ -6,7 +6,7 @@
 ## 🔗 GitHub Repository
 
 [GitHub Repo – SayHello](https://github.com/priyagupta-js/Say-Hello)  
-
+[Hosted in Vercel](https://say-hello-psi.vercel.app/)
 
 ---
 
