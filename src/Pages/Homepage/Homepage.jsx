@@ -10,6 +10,7 @@ const Homepage = () => {
 
    const [onExpand, setOnExpand] = useState(false);
    const [userPost , setUserPost] = useState([]);
+   const [isLoggedIn , setIsLoggedIn] = useState(false);
 
     useEffect(() => {
     const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
