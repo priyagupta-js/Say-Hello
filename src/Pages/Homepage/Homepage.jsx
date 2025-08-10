@@ -12,10 +12,30 @@ const Homepage = () => {
    const [userPost , setUserPost] = useState([]);
    const [isLoggedIn , setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
-    const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
-    setUserPost(storedPosts);  // Set posts in state
+  // Check if the user is logged in on page load
+  useEffect(() => {
+    const storedLoginStatus = localStorage.getItem("isLoggedIn") === "true"; 
+    setIsLoggedIn(storedLoginStatus);  // Update login state from localStorage
+
+    if (storedLoginStatus) {
+      // If logged in, load posts from localStorage
+      const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+      setUserPost(storedPosts);
+    }
   }, []);
+
+    const handleLogin = () => {
+    // Simulate login (this will be handled in the Login component now)
+    localStorage.setItem("isLoggedIn", "true");
+    setIsLoggedIn(true);
+  };
+
+  
+  const handleLogout = () => {
+    // Log out and clear localStorage
+    localStorage.setItem("isLoggedIn", "false");
+    setIsLoggedIn(false);
+  };
 
    const handleNewPost =(data) =>{
     const newPost = {

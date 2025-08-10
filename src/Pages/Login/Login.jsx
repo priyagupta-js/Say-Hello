@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 const Login = () => {
 
   const navigate = useNavigate();
+
+    const handleLogin = () => {
+    // Simulate login by setting isLoggedIn to true in localStorage
+    localStorage.setItem("isLoggedIn", "true");
+    navigate("/home");  // Redirect to Homepage after login
+  };
+  
   return (
     <>
       <div className="h-screen flex items-center justify-center overflow-hidden">
